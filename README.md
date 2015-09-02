@@ -16,25 +16,18 @@ Optimizations include:
 
 In the box
 ---
-* **spotify/cassandra**
+* **connectedhomes/cassandra21**
 
   This is probably the image you want, it runs a one-node Cassandra cluster.
   Built from the `cassandra` directory.
 
-* **spotify/cassandra:cluster**
+* **connectedhomes/cassandra:cluster**
 
   Runs a Cassandra cluster. Expects `CASSANDRA_SEEDS` and `CASSANDRA_TOKEN` env variables to be set.
   If `CASSANDRA_SEEDS` is not set, node acts as its own seed. If `CASSANDRA_TOKEN` is not set, the
   container will not run. Built from the `cassandra-cluster` directory.
 
-* **spotify/cassandra:base**
+* **connectedhomes/cassandra:base**
 
   The base image with an unconfigured Cassandra installation. You probably don't want to use this
   directly. Built from the `cassandra-base` directory.
-
-Notes
----
-Things are still under heavy development:
-* Only Cassandra 2.0 with almost-generic config (miles away from what we actually run Cassandra
-  with) is supported so far.
-* There's nothing to help you with tokens and stuff.
