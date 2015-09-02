@@ -21,13 +21,13 @@ In the box
   This is probably the image you want, it runs a one-node Cassandra cluster.
   Built from the `cassandra` directory.
 
-* **connectedhomes/cassandra:cluster**
+* **connectedhomes/cassandra21:cluster**
 
   Runs a Cassandra cluster. Expects `CASSANDRA_SEEDS` and `CASSANDRA_TOKEN` env variables to be set.
   If `CASSANDRA_SEEDS` is not set, node acts as its own seed. If `CASSANDRA_TOKEN` is not set, the
   container will not run. Built from the `cassandra-cluster` directory.
 
-* **connectedhomes/cassandra:base**
+* **connectedhomes/cassandra21:base**
 
   The base image with an unconfigured Cassandra installation. You probably don't want to use this
   directly. Built from the `cassandra-base` directory.
