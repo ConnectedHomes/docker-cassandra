@@ -1,11 +1,13 @@
-# Spotify Cassandra 2.0 Base Image
+# Connected Hpmes Cassandra 2.1 Base Image
 #
 # VERSION               0.1
 #
-# Installs Cassandra 2.0 package. Does only basic configuration.
+# Installs Cassandra 2.1 package. Does only basic configuration.
 # Tokens and seed nodes should be configured by child images.
 
-FROM dockerfile/java:oracle-java7
+FROM java:7
+
+MAINTAINER Josep Casals <josep.casals@bgch.co.uk>
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -17,9 +19,9 @@ RUN echo "deb http://debian.datastax.com/community stable main" > /etc/apt/sourc
 # Workaround for https://github.com/docker/docker/issues/6345
 RUN ln -s -f /bin/true /usr/bin/chfn
 
-# Install Cassandra 2.0.10
+# Install Cassandra 2.1.8
 RUN apt-get update && \
-    apt-get install -y cassandra=2.0.10 dsc20=2.0.10-1 && \
+    apt-get install -y cassandra=2.1.8 dsc21=2.1.8-1 && \
     rm -rf /var/lib/apt/lists/*
 
 ENV CASSANDRA_CONFIG /etc/cassandra

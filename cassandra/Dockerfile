@@ -2,9 +2,9 @@
 #
 # VERSION               0.1
 #
-# Starts a Cassandra instance constituting a one node cluster. 
+# Starts a Cassandra instance constituting a one node cluster.
 
-FROM spotify/cassandra:base
+FROM connectedhomes/cassandra21:base
 
 USER root
 
@@ -13,4 +13,3 @@ ADD scripts/cassandra-singlenode.sh /usr/local/bin/cassandra-singlenode
 
 # Start Cassandra
 ENTRYPOINT ["cassandra-singlenode"]
-
